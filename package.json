@@ -1,0 +1,20 @@
+{
+  "name": "nodejs_clean_tdd",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leoCardosoDev/nodejs_TDD_SOLID_clean_arch.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/leoCardosoDev/nodejs_TDD_SOLID_clean_arch/issues"
+  },
+  "homepage": "https://github.com/leoCardosoDev/nodejs_TDD_SOLID_clean_arch#readme"
+}
