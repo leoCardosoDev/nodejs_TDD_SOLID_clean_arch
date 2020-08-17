@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/leoCardosoDev/nodejs_TDD_SOLID_clean_arch/issues"
   },
-  "homepage": "https://github.com/leoCardosoDev/nodejs_TDD_SOLID_clean_arch#readme"
+  "homepage": "https://github.com/leoCardosoDev/nodejs_TDD_SOLID_clean_arch#readme",
+  "devDependencies": {
+    "git-commit-msg-linter": "^2.4.4"
+  }
 }
