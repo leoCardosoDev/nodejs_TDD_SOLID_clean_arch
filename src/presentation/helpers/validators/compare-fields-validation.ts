@@ -1,7 +1,7 @@
 import { Validation } from './valitation'
 import { MissingParamError } from '../../errors'
 
-export class RequiredFieldsValidation implements Validation {
+export class CompareFieldsValidation implements Validation {
   private readonly fieldName: string
 
   constructor (fieldName: string) {
