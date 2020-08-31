@@ -1,6 +1,6 @@
 {
   "name": "nodejs_clean_tdd",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "NodeJs - TDD, Typescript e Clean Architecture",
   "main": "index.js",
   "scripts": {
