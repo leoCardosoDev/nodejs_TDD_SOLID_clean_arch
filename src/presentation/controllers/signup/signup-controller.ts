@@ -19,7 +19,7 @@ export class SignUpController implements Controller {
         email,
         password
       })
-      this.authentication.auth({
+      await this.authentication.auth({
         email,
         password
       })
