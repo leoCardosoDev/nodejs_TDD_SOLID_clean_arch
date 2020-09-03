@@ -1,6 +1,6 @@
 {
   "name": "nodejs_clean_tdd",
-  "version": "1.2.0",
+  "version": "1.2.3",
   "description": "NodeJs - TDD, Typescript e Clean Architecture",
   "main": "index.js",
   "scripts": {
@@ -10,7 +10,7 @@
     "up": "npm run build && docker-compose up -d",
     "down": "docker-compose down",
     "check": "npm-check -s -u",
-    "test": "jest --passWithNoTests --silent --noStackTrace --runInBand",
+    "test": "jest --colors --passWithNoTests --silent --noStackTrace --runInBand",
     "test:verbose": "jest --passWithNoTests --runInBand",
     "test:unit": "npm test -- --watch -c jest-unit-config.js",
     "test:integration": "npm test -- --watch -c jest-integration-config.js",
