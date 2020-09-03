@@ -1,4 +1,5 @@
 import { Controller, HttpRequest, HttpResponse, Validation } from "./add-survey-controller-protocols"
+import { badRequest } from "../../../helpers/http/http-helper"
 
 export class AddSurveyController implements Controller {
   constructor (
@@ -6,7 +7,10 @@ export class AddSurveyController implements Controller {
   ) {}
 
   async handle (httpRquest: HttpRequest): Promise<HttpResponse> {
-    this.validation.validate(httpRquest.body)
+    const error = this.validation.validate(httpRquest.body)
+    if (error) {
+      return badRequest(error)
+    }
     return new Promise(resolve => resolve(null))
   }
 }
