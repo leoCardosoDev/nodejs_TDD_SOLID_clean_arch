@@ -67,7 +67,7 @@ describe('LoadSurveys Controller', () => {
     expect(httpResponse).toEqual(ok(makeFakeSurveys()))
   })
 
-  test('Should return 500 if AddSurvey throws', async () => {
+  test('Should return 500 if LoadSurveys throws', async () => {
     const { sut, loadSurveysStub } = makeSut()
     jest.spyOn(loadSurveysStub, 'load').mockReturnValueOnce(new Promise((resolve, reject) => reject(new Error())))
     const httpResponse = await sut.handle({})
