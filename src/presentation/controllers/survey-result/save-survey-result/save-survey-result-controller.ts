@@ -1,12 +1,16 @@
-import { Controller, forbidden, serverError, HttpRequest, HttpResponse, InvalidParamError, LoadSurveyById } from "./save-survey-result-controller-protocols"
+import { Controller, forbidden, serverError, HttpRequest, HttpResponse, InvalidParamError, LoadSurveyById, SaveSurveyResult } from "./save-survey-result-controller-protocols"
 
 export class SaveSurveyResultController implements Controller {
-  constructor (private readonly loadSurveyById: LoadSurveyById) {}
+  constructor (
+    private readonly loadSurveyById: LoadSurveyById,
+    private readonly saveSurveyResult: SaveSurveyResult
+  ) {}
 
   async handle (httpResquest: HttpRequest): Promise<HttpResponse> {
     try {
       const { surveyId } = httpResquest.params
       const { answer } = httpResquest.body
+      const { accountId } = httpResquest
       const survey = await this.loadSurveyById.loadById(surveyId)
       if (survey) {
         const answers = survey.answers.map(a => a.answer)
@@ -16,6 +20,12 @@ export class SaveSurveyResultController implements Controller {
       } else {
         return forbidden(new InvalidParamError('surveyId'))
       }
+      await this.saveSurveyResult.save({
+        accountId,
+        surveyId,
+        answer,
+        date: new Date()
+      })
       return null
     } catch (error) {
       return serverError(error)
